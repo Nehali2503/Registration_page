@@ -17,11 +17,11 @@ class RegForm extends Component {
             FirstName:"" ,
             LastName:"",
             Email:"",
-             Password:"",
+             Password:""
     }
     }
 
-    handlefirstname=(event)=>
+   /* handlefirstname=(event)=>
     {this.setState({FirstName:event.target.value})
 }
     handlelastname=(event)=>
@@ -36,11 +36,12 @@ class RegForm extends Component {
     }
     handlepassword=(event)=>
     {this.setState({Password:event.target.value})
-    }
+    }*/
+handlechange=(event)=>{
+    this.setState({name:event.target.value})}
 
 handlesubmit=(event)=>{
-
-if (this.state.FirstName==="")
+ if (this.state.FirstName==="")
  alert(`Sorry,You have not entered your first name`);
  
 else if
@@ -52,8 +53,7 @@ alert(`Sorry,You have not entered your email Id`);
 
  else if (this.state.Password==="")
 alert(`Sorry,You have not entered the password`);
-    
-
+ 
 else 
    alert (`HELLO ${this.state.FirstName}! You have successfully registered!!!`);
    event.preventDefault(); 
@@ -67,22 +67,23 @@ else
         <div><Card className="input">
             <Form onSubmit={this.handlesubmit} className="input">   
            <Row><Col>
-                <Form.Label > FirstName</Form.Label>
+                <Form.Label  > FirstName</Form.Label>
                 <Form.Control type="text" placeholder="Enter FirstName"value={this.state.FirstName}
-                onChange={this.handlefirstname}/> </Col>
+               name={'FirstName'} onChange={this.handlefirstname}/> </Col>
                 <Col><Form.Label>LastName</Form.Label>
                 <Form.Control type="text"placeholder="Enter LastName" value={this.state.LastName}
-                onChange={this.handlelastname}/> 
+                name={'LastName'} onChange={this.handlelastname}/> 
                 </Col> </Row> 
                 <Row><Col>
                 <Form.Label>Email Id </Form.Label>
                 <Form.Control type="email" placeholder="Enter Email Id"value={this.state.Email}
-                onChange={this.handleemail}/> </Col>
+                name={'Email'} onChange={this.handleemail}/> </Col>
                 <Col><Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Enter password"value={this.state.Password}
-                onChange={this.handlepassword}/> 
+                name={'Password'} onChange={this.handlepassword}/> 
                 </Col></Row><br/>
-                <Form.Control type="submit" value="SUBMIT" className="button"/> 
+                
+                <input type="submit" value="SUBMIT" className="button"  /> 
                 
                </Form></Card>
                 

@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="styleapp"> 
-      <Card> <Card.Title>
+      <Card> <Card.Title className="cardc">
       <p><h1>Welcome to the Registration Page!</h1></p>
       </Card.Title></Card>
     
